@@ -1,0 +1,29 @@
+<div *ngIf="data != null">
+  <label class="mt-3 text-success fs-4">Your Options</label>
+
+  <div class="d-flex justify-content-start mt-3 gap-4">
+
+    <!-- <ng-template *ngIf="!loading"> -->
+    <ng-container *ngFor="let data of data">
+      <div class="card shadow bg-body rounded">
+        <div class="py-4 bg-light d-flex justify-content-center">
+          <img [src]="data.link" class="card-img-top w-25" alt="...">
+
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{data.name}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <ul>
+            <li *ngFor="let sub of data.subHeading">
+              {{sub.name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ng-container>
+
+
+
+  </div>
+</div>
